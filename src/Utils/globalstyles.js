@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
     list-style: none;
+    flex-shrink: 0;
   }
 
   // ------ SCROLL BAR
