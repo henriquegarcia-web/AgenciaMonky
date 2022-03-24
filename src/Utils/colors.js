@@ -1,10 +1,15 @@
 const colors = {
-    background: 'rgb(65, 61, 101)',
-    brown: 'rgb(43, 31, 49)',
-    blueGreen: 'rgb(95, 185, 176)',
-    green: 'rgb(190, 249, 146)',
+    black: 'rgba(0,0,0, 1)',
+    white: 'rgba(255,255,255, 1)',
 
-    white: '#EEEEEE',
+    lightGray: 'rgba(215,215,215, 1)',
+    gray: 'rgba(215,215,215, 1)',
+    darkGray: 'rgba(215,215,215, 1)',
+
+    yellow: 'rgba(230,172,55, 1)',
+
+    blue: 'rgba(28,117,185, 1)',
+    darkBlue: 'rgba(14,19,37, 1)',
 };
 
 export default colors;
