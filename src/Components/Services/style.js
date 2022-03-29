@@ -23,10 +23,10 @@ export const ServiceCard = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 420px;
+  height: fit-content;
   border-radius: 20px;
   margin-right: 40px;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
   transition: .2s;
 
@@ -66,6 +66,7 @@ export const ServiceCardDescription = styled.div`
   text-align: center;
   font-size: 16px;
   font-weight: 300;
+  margin-bottom: 25px;
 
   b {
     font-weight: 600;
