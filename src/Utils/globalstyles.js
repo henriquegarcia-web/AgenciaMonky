@@ -45,7 +45,7 @@ export const ContainerHeader = styled.div`
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
   color: ${colors.white};
 `

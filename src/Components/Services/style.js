@@ -17,15 +17,31 @@ export const ServicesWrapper = styled.div`
   display: flex;
 `
 
-export const ServicesCard = styled.div`
+export const ServiceCard = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 420px;
   border-radius: 20px;
   margin-right: 40px;
+  padding: 10px;
 
   background-color: ${colors.lightGray};
 
   &:last-of-type {
     margin: 0;
   }
+`
+
+export const ServiceCardBanner = styled.div`
+  border-radius: 16px;
+  width: 100%;
+  height: 180px;
+  overflow: clip;
+`
+
+export const BannerImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `

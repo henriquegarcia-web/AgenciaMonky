@@ -14,10 +14,10 @@ const HomePage = () => {
       <Header />
       <MainBanner />
       <Services />
-      {/* <Plans />
+      <Plans />
       <Portfolio />
       <Contact />
-      <Footer /> */}
+      {/* <Footer /> */}
     </S.Home>
   )
 }
