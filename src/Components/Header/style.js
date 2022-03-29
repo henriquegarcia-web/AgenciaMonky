@@ -2,6 +2,9 @@ import styled from "styled-components";
 import colors from "../../Utils/colors";
 
 export const Header = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,12 +41,19 @@ export const HeaderBriefing = styled.div``
 
 export const InputBriefing = styled.button`
   border-radius: 50px;
-  padding: 8px 18px;
+  padding: 6px 18px;
   font-size: 18px;
   font-weight: 500;
   transition: .2s;
   cursor: pointer;
 
+  border: 2px solid ${colors.yellow};
   color: ${colors.darkBlue};
   background-color: ${colors.yellow};
+
+  &:hover {
+    border: 2px solid ${colors.yellow};
+    background-color: transparent;
+    color: ${colors.yellow};
+  }
 `

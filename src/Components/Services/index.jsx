@@ -33,8 +33,7 @@ export default Services
 export const ServiceCard = ({ type }) => {
 
   const bannerUrl = type === 'website' ? ServiceWebsiteImage : ServiceAppsImage
-
-
+  const bannerHeader = type === 'website' ? 'CRIAÇÃO DE APPS' : 'CRIAÇÃO DE SITES'
 
   return (
     <S.ServiceCard>
@@ -42,17 +41,21 @@ export const ServiceCard = ({ type }) => {
         <S.BannerImage src={bannerUrl} alt='' />
       </S.ServiceCardBanner>
 
-      {/* <S.ServiceCardHeader>
-
+      <S.ServiceCardHeader>
+        {bannerHeader}
       </S.ServiceCardHeader>
 
       <S.ServiceCardDescription>
-
+        {type === 'website' ? (
+          <>Você precisa de um <b>aplicativo</b>? Um aplicativo que funciona como uma super <b>ferramenta de vendas</b>? Estamos aqui para ajudá-lo!</>
+        ) : (
+          <>Se você deseja levar sua empresa para o <b>próximo nível</b>, precisa de um site que funcione. A obtenção de um <b>site profissional</b> é a melhor forma de projetar a imagem da marca.</>
+        )}
       </S.ServiceCardDescription>
 
       <S.ServiceCardCta>
         Ver planos
-      </S.ServiceCardCta> */}
+      </S.ServiceCardCta>
     </S.ServiceCard>
   )
 }

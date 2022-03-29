@@ -8,6 +8,7 @@ export const MainBanner = styled.div`
   width: 100%;
   height: 420px;
   overflow: clip;
+  margin-top: 80px;
 
   color: ${colors.lightGray};
   background-color: ${colors.darkBlue};
