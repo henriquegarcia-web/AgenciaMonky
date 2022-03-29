@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
 import colors from "./colors";
-// import colors from "./colors";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
     flex-shrink: 0;
+  }
+
+  body {
+    background-color: ${colors.darkBlue};
   }
 
   // ------ SCROLL BAR
@@ -45,7 +48,7 @@ export const ContainerHeader = styled.div`
   flex-direction: column;
   align-items: center;
   width: fit-content;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 
   color: ${colors.white};
 `
