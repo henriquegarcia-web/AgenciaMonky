@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "../../Utils/colors";
 
 export const Contact = styled.div`
@@ -14,6 +14,8 @@ export const Contact = styled.div`
 `
 
 export const ContactWrapper = styled.div`
+  width: 100%;
+  max-width: 1200px;
   padding: 0 30px;
   display: flex;
   flex-wrap: wrap;
@@ -23,10 +25,13 @@ export const ContactHeader = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 export const ContactTitle = styled.h2`
-  width: 60%;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
 `
 
 export const ContactButton = styled.button`
@@ -34,7 +39,7 @@ export const ContactButton = styled.button`
   font-size: 18px;
   font-weight: 500;
   border-radius: 50px;
-  width: 40%;
+  padding: 8px 18px;
   border: 2px solid transparent;
   box-shadow: 1px 1px 2px 1px rgba(999,999,999, 0.1);
   transition: all 0.2s ease-out;
@@ -62,18 +67,6 @@ export const ContactForm = styled.form`
   justify-content: space-between;
 `
 
-export const FormGroup = styled.div`
-  width: 48%;
-
-  &.textarea {
-    width: 100%;
-  }
-  
-  & + & {
-    margin-bottom: 15px;
-  }
-`
-
 export const ContactFormButton = styled.button`
   float: right;
   width: 250px;
@@ -89,5 +82,11 @@ export const ContactFormButton = styled.button`
     color: ${colors.white};
     background: transparent;
     border: 2px solid ${colors.white};
+  }
+
+  &[disabled] {
+    color: #939393;
+    background: #ccc;
+    cursor: default;
   }
 `
