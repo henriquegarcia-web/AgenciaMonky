@@ -3,8 +3,86 @@ import * as GS from '../../Utils/globalstyles'
 import { Textarea } from '../Textarea'
 import { Input } from '../Input'
 
+import isEmailValid from '../../Utils/isEmailValid'
+import formatPhone from '../../Utils/formatPhone'
+import useErrors from '../../hooks/useErrors'
+
+import FormGroup from '../FormGroup'
+import { useState } from 'react'
+
+
 
 const Contact = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [phone, setPhone] = useState('')
+  const [description, setDescription] = useState('')
+
+  const {
+    errors,
+    setError,
+    removeError,
+    getErrorMessageByFieldName
+  } = useErrors()
+
+  const isFormValid = (
+    name 
+    && email 
+    && whatsapp
+    && description
+    && errors.length === 0
+  );
+
+  function handleNameChange(event) {
+    setName(event.target.value);
+
+    if (!event.target.value) {
+      setError({ field: 'name', message: 'Nome é obrigatório.' });
+    } else {
+      removeError('name');
+    }
+  }
+
+  function handleEmailChange(event) {
+    setEmail(event.target.value);
+
+    if (event.target.value && !isEmailValid(event.target.value)) {
+      setError({ field: 'email', message: 'Email inválido.' });
+    } else {
+      removeError('email');
+    }
+  }
+
+  function handleWhatsappChange(event) {
+    setWhatsapp(formatPhone(event.target.value));
+
+    if (!event.target.value ) {
+      setError({ field: 'whatsapp', message: 'Whatsapp inválido.' });
+    } else {
+      removeError('whatsapp');
+    }
+  }
+
+  function handlePhoneChange(event) {
+    setPhone(formatPhone(event.target.value));
+  }
+
+  function handleDescriptionChange(event) {
+    setDescription(event.target.value)
+
+    if (!event.target.value ) {
+      setError({ field: 'description', message: 'Por favor, digite uma mensagem para nós :)' });
+    } else {
+      removeError('description');
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log('request sent')
+  }
+
   return (
     <S.Contact>
 
@@ -21,46 +99,63 @@ const Contact = () => {
             Responda ao questionário e agilize o processo
           </S.ContactTitle>
           <S.ContactButton type="button">
-            BRIEFING
+            FAZER BRIEFING
           </S.ContactButton>
           <S.Span>
             Ou
           </S.Span>
         </S.ContactHeader>
 
-        <S.ContactForm>
+        <S.ContactForm onSubmit={handleSubmit} noValidate>
 
-          <S.FormGroup>
+          <FormGroup error={getErrorMessageByFieldName('name')}>
             <Input
-              placeholder='Nome'     
+              error={getErrorMessageByFieldName('name')}
+              placeholder="Nome *"
+              value={name}
+              onChange={handleNameChange}  
             />
-          </S.FormGroup>
+          </FormGroup>
 
-          <S.FormGroup>
-            <Input       
-              placeholder='E-mail'   
+          <FormGroup error={getErrorMessageByFieldName('email')}>
+            <Input   
+              type="email"    
+              error={getErrorMessageByFieldName('email')}
+              placeholder='E-mail *'
+              value={email}
+              onChange={handleEmailChange}  
             />
-          </S.FormGroup>
+          </FormGroup>
 
-          <S.FormGroup>
+          <FormGroup>
             <Input 
-              placeholder='Telefone'   
+              placeholder='Telefone' 
+              value={phone}
+              onChange={handlePhoneChange}
+              maxLength="15"  
             />
-          </S.FormGroup>
+          </FormGroup>
 
-          <S.FormGroup>
+          <FormGroup error={getErrorMessageByFieldName('whatsapp')}>
             <Input 
-            placeholder='Whatsapp'
+            placeholder='Whatsapp *'
+            error={getErrorMessageByFieldName('whatsapp')}
+            value={whatsapp}
+            onChange={handleWhatsappChange}
+            maxLength="15"  
             />
-          </S.FormGroup>
+          </FormGroup>
 
-          <S.FormGroup className='textarea'>
+          <FormGroup className='textarea' error={getErrorMessageByFieldName('description')}>
             <Textarea 
-              placeholder='O que você precisa?'
+              error={getErrorMessageByFieldName('description')}
+              value={description}
+              onChange={handleDescriptionChange}
+              placeholder='O que você precisa? *'
             />
-          </S.FormGroup>
+          </FormGroup>
 
-          <S.ContactFormButton>
+          <S.ContactFormButton type="submit" disabled={!isFormValid}>
             Enviar Mensagem
           </S.ContactFormButton>
         </S.ContactForm>

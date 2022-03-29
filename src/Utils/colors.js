@@ -10,6 +10,11 @@ const colors = {
 
     blue: 'rgba(28,117,185, 1)',
     darkBlue: 'rgba(14,19,37, 1)',
+    danger: {
+        light: '#f97171',
+        main: '#fc5050',
+        dark: '#f63131',
+    },
 };
 
 export default colors;

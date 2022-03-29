@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "../Utils/colors";
 
 export const Input = styled.input`
@@ -11,4 +11,9 @@ export const Input = styled.input`
   color: ${colors.white};
   font-size: 16px;
   font-weight: 300;
+
+  ${({ theme, error }) => error && css`
+    color: ${colors.danger.main};
+    border-color: ${colors.danger.main} !important;
+  `}
 `
