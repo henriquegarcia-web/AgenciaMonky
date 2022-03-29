@@ -42,12 +42,18 @@ export const PlansCard = styled.div`
   margin-right: 40px;
   padding: 15px;
   text-align: center;
+  cursor: pointer;
+  transition: .2s;
 
   color: ${colors.darkBlue};
   background-color: ${colors.lightGray};
 
   &:last-of-type {
     margin: 0;
+  }
+
+  &:hover {
+    transform: scale(1.02);
   }
 `
 

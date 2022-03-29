@@ -1,8 +1,12 @@
 import * as S from './style'
 
+import LogoSampleWhite from '../../Assets/LogoSampleWhite.png'
+
 const Header = () => {
   return (
     <S.Header>
+      <S.HeaderLogo src={LogoSampleWhite} alt='' />
+
       <HeaderNavbar />
 
       <S.HeaderBriefing>

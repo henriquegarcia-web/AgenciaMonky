@@ -16,6 +16,17 @@ export const Header = styled.div`
   background-color: ${colors.darkBlue};
 `
 
+export const HeaderLogo = styled.img`
+  width: 100px;
+  cursor: pointer;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`
+
 export const HeaderNavbar = styled.div``
 
 export const NavbarUl = styled.ul`
