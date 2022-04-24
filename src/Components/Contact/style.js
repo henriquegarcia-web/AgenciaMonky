@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "../../Utils/colors";
 
 export const Contact = styled.div`
@@ -109,5 +109,11 @@ export const ContactFormButton = styled.button`
     color: ${colors.white};
     background: transparent;
     border: 2px solid ${colors.white};
+  }
+
+  &[disabled] {
+    color: #939393;
+    background: #ccc;
+    cursor: default;
   }
 `
