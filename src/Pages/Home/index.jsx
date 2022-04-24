@@ -17,7 +17,7 @@ const HomePage = () => {
       <Plans />
       <Portfolio />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </S.Home>
   )
 }

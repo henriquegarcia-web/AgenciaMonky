@@ -30,38 +30,14 @@ const Contact = () => {
 
         <S.ContactForm>
 
-          <S.FormGroup>
-            <Input
-              placeholder='Nome'     
-            />
-          </S.FormGroup>
-
-          <S.FormGroup>
-            <Input       
-              placeholder='E-mail'   
-            />
-          </S.FormGroup>
-
-          <S.FormGroup>
-            <Input 
-              placeholder='Telefone'   
-            />
-          </S.FormGroup>
-
-          <S.FormGroup>
-            <Input 
-            placeholder='Whatsapp'
-            />
-          </S.FormGroup>
-
-          <S.FormGroup className='textarea'>
-            <Textarea 
-              placeholder='O que você precisa?'
-            />
-          </S.FormGroup>
+          <S.FormGroup><p>Nome</p><Input /></S.FormGroup>
+          <S.FormGroup><p>E-mail</p><Input /></S.FormGroup>
+          <S.FormGroup><p>Telefone</p><Input /></S.FormGroup>
+          <S.FormGroup><p>Whatsapp</p><Input /></S.FormGroup>
+          <S.FormGroup className='textarea'><p>O que você precisa?</p><Textarea /></S.FormGroup>
 
           <S.ContactFormButton>
-            Enviar Mensagem
+            ENVIAR
           </S.ContactFormButton>
         </S.ContactForm>
       </S.ContactWrapper>
